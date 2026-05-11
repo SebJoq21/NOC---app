@@ -18,12 +18,12 @@ export class Server {
         console.log('Server started...')
     
         //todo: Mandar email
-        new SendEmailLogs(
-            emailService,
-            fileSystemLogRepository
-        ).execute(
-            ['sebastian.chicata@gmail.com', 'joaquin.serrato21@gmail.com']
-        )
+//        new SendEmailLogs(
+//            emailService,
+//            fileSystemLogRepository
+//        ).execute(
+//            ['sebastian.chicata@gmail.com', 'joaquin.serrato21@gmail.com']
+//        )
 //       const emailService = new EmailService()
 //       emailService.sendEmailWithFileSystemLogs(
 //            ['sebastian.chicata@gmail.com', 'joaquin.serrato21@gmail.com']
