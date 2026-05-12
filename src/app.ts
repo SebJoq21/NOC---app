@@ -23,6 +23,6 @@ async function main() {
     /*await newLog.save();
     console.log('Log creado:', newLog);*/
 
-    //Server.start()
+    Server.start()
     //console.log( envs )
 }

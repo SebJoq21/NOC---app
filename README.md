@@ -5,17 +5,6 @@ El objetivo es crear una serie de tareas usando arquitectura limpia con Typescri
 # Dev 
 1. Clonar el archivo .env.template a .env
 2. Configurar las variables de entorno 
-
-```
-PORT=3000
-
-MAILER_EMAIL=
-MAILER_SECRET_KEY=
-
-PROD=false
-
-MONGO_URL=
-MONGO_DB_NAME=
-MONGO_USER=
-MONGO_PASS=
-```
+3. Ejecutar el comando ```npm install```
+4. Levantar las bases de datos con el comando ```docker compose up -d```
+5. Ejecutar la aplicación con el comando ```npm run dev```
