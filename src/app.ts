@@ -1,8 +1,11 @@
+import { PrismaClient } from '@prisma/client'
+import { Pool } from 'pg'
+import { PrismaPg } from '@prisma/adapter-pg'
 import { Server } from './presentation/server'
 import { LogModel, MongoDatabase } from './data/mongodb'
 import { envs } from './config/plugins/envs.plugin'
 
-(async() => {
+(async () => {
     main()
 })()
 
@@ -13,15 +16,25 @@ async function main() {
         dbName: envs.MONGO_DB_NAME
     })
 
-    // Crear un registro 
-    /* const newLog = await LogModel.create({
-        message:'Test message from MongoDB',
-        origin:'App.ts',
-        level: 'low'
-    })*/
+    // 2. Crear el Pool de conexiones para Postgres usando tu variable de entorno
+    const pool = new Pool({ connectionString: envs.POSTGRES_URL })
 
-    /*await newLog.save();
-    console.log('Log creado:', newLog);*/
+    // 3. Crear el adaptador de Prisma
+     const adapter = new PrismaPg(pool)
+
+    // 4. Instanciar Prisma pasándole el adaptador (¡Esto resuelve el error de 0 argumentos!)
+    const prisma = new PrismaClient({ adapter })
+
+    // 5. Tu código de prueba
+    // const newLog = await prisma.logModel.create({
+    //     data: {
+    //         level: 'HIGH',
+    //         message: 'Hola Mundo',
+    //         origin: 'App.ts'
+    //     }
+    // })
+
+    // console.log({ newLog })
 
     Server.start()
     //console.log( envs )

@@ -14,3 +14,5 @@ logs/
 mongo/
 
 postgres/
+
+/src/generated/prisma
