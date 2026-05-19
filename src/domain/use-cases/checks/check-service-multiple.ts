@@ -8,7 +8,7 @@ interface CheckServiceMultipleUseCase {
 type SuccessCallback = () => void | undefined
 type ErrorCallback = ( error: string ) => void | undefined
 
-export class checkServiceMultiple implements CheckServiceMultipleUseCase {
+export class CheckServiceMultiple implements CheckServiceMultipleUseCase {
 
     constructor(
         private readonly logRepository: LogRepository[],

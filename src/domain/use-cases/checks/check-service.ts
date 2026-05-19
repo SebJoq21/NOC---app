@@ -8,7 +8,7 @@ interface CheckServiceUseCase {
 type SuccessCallback = () => void | undefined
 type ErrorCallback = ( error: string ) => void | undefined
 
-export class checkService implements CheckServiceUseCase {
+export class CheckService implements CheckServiceUseCase {
 
     constructor(
         private readonly logRepository: LogRepository,
